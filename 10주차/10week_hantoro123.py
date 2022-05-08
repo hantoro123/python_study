@@ -22,7 +22,7 @@ for i in range(0,N):
         order = i + 1                   # 그때 순서 알아두기
 
 print(order)
-
+ 
 ## 종이 자르기 2628
 
 column, row = map(int, input().split())  # 초기 열과 행 받기
