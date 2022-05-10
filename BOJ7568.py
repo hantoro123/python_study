@@ -7,7 +7,7 @@ def big(p,n):
                     rank[j] += 1                                # j번 사람 등수 +1
 
     return rank
-
+ 
 person=[]                           
 n = int(input())                    # 사람 몇명인지
 for i in range(n):
