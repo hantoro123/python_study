@@ -1,22 +1,13 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        # haystack 만큼 반복하는데
-        for i in range(len(haystack)):
-            # 같으면 True
-            same = True
-            # haystack이 needle의 첫번째와 같으면
-            if haystack[i] == needle[0]:
-                # needle이랑 같은지 확인하고
-                for j in range(1,len(needle)):
-                    if i+j == len(haystack) or haystack[i+j] != needle[j]:
-                        # 다르면 same을 False로
-                        same = False
-                        break
-                # same이 True면 i를 반환
-                if same:
-                    return i
-            # 다르면 다음으로 넘어감
-            else:
-                continue
-        # needle과 같은 부분이 없으면 -1출력
+        # needle의 길이를 담고
+        j = len(needle)
+        # i+j가 haystack의 길이를 넘어가면 불가능 하므로
+        # i-j+1만큼만 반복하고
+        for i in range(len(haystack)-j+1):
+            # haystack의 i번부터 i+j-1번까지의 단어가
+            # needle과 같다면 현재 i를 반환
+            if haystack[i:i+j] == needle:
+                return i
+        # 다 돌았지만 같지 않다면 -1을 반환
         return -1
